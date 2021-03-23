@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Home from './views/Home';
 
-function App() {
+function App(): JSX.Element {
   return (
     <Router>
       <div className="App">
