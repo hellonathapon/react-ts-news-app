@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Take in a generic type and return object of T[] and error state.
+// Take in a generic type and return object of T[] and error states.
 
 function useFetch<T>(url: string): { response: T[] | null; error: Error | null } {
     const [response, setResponse] = React.useState<T[] | null>(null);

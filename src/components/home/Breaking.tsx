@@ -1,34 +1,24 @@
 import React from 'react';
+import { INews } from '../../interfaces/interfaces';
 
-interface INews {
-    title: string,
-    content: string,
-    description: string,
-    author: string,
-    publishedAt: string,
-    url: string,
-    urlToImage: string,
-    source: {
-        id: string,
-        name: string
-    }
-}
-
-interface IBreakingNews {
-    BNews: INews | null
+interface BreakingProp {
+    IBreaking: INews | null
 
 }
-const Breaking:React.FC<IBreakingNews> = ({BNews}): JSX.Element => {
-    console.log(BNews)
+const Breaking:React.FC<BreakingProp> = ({IBreaking}): JSX.Element => {
     return (
         <div className="home-grid-item home-grid-item-1 breaking">
-            { BNews ? (
-                <a href={BNews.url} target="_blank" className="card">
-                    <img className="card-image" src={BNews.urlToImage} alt="image"/>
+            { IBreaking ? (
+                <a href={IBreaking.url} target="_blank" className="card">
+                    <img className="card-image" src={IBreaking.urlToImage} alt="image"/>
+                    <div className="overlay"></div>
                     <article>
-                        <h2>{BNews.title}</h2>
-                        <p>{BNews.description}</p>
+                        <h2>{IBreaking.title.slice(0, IBreaking.title.indexOf('-'))}</h2>
                     </article>
+                    <div className="source">
+                        <small>{new Date(IBreaking.publishedAt).toDateString()}</small>
+                        <b><p>{IBreaking.title.slice(IBreaking.title.indexOf('-'))}</p></b>
+                    </div>
                 </a>
             ): null }
         </div>
