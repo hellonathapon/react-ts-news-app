@@ -9,7 +9,9 @@ const Header = () => {
                     <img src={tsLogo} className="ts-logo" alt="ts logo" />
                     <img src={logo} className="App-logo" alt="logo" />
                 </div>
-                <p>Souce Code</p>
+                <article>
+                    <a href="#">Source Code</a>
+                </article>
             </div>
         </div>
     )

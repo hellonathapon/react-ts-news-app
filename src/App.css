@@ -1,3 +1,8 @@
+:root {
+  --col1-dark: #2f495e;
+  --hover-purple: hsl(245deg 100% 60%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +11,7 @@
 
 .App {
   text-align: center;
-  color: #2f495e;
+  color: var(--col1-dark);
 }
 
 .header {
@@ -14,6 +19,7 @@
   position: fixed;
   z-index: 100;
   background: #fff;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
 }
 .header .header-brand {
   max-width: 1300px;
@@ -33,6 +39,18 @@
 }
 .header .header-brand .ts-logo {
   height: 40px;
+}
+.header .header-brand article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header-brand article a {
+  text-decoration: none;
+  color: var(--col1-dark);
+}
+.header .header-brand article a:hover {
+  color: var(--hover-purple);
 }
 
 .home-grid {
@@ -84,10 +102,12 @@
   bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: calc(100% - 20px);
 }
 .breaking article > * {
   color: #fff;
+  text-align-last: left;
+  text-align: start;
 }
 .breaking .source {
   position: absolute;
@@ -109,7 +129,7 @@
   flex-direction: column;
 }
 .trending .trending-card:hover h3 a {
-  color: hsl(245deg 100% 60%);
+  color: var(--hover-purple);
 }
 .trending .trending-card h3 {
   text-align: start;
@@ -142,6 +162,10 @@
   text-decoration: none;
   color: #2f495e;
   overflow: hidden;
+
+}
+.news .news-card:hover article p {
+  color: var(--hover-purple);
 }
 .news .news-card figure {
   margin: 0;
@@ -165,8 +189,13 @@
   .home-grid .home-grid-item {
     grid-column: 1 / span 12; 
   }
+  .trending {
+    margin-right: .5rem;
+  }
   .news {
     grid-template-columns: 1fr 1fr;
+    margin: 0 .5rem;
+    margin-right: .5rem;
   }
 } 
 

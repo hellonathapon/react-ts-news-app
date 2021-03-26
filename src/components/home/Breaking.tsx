@@ -1,5 +1,6 @@
 import React from 'react';
 import { INews } from '../../interfaces/interfaces';
+import ContentLoader from 'react-content-loader'
 
 interface BreakingProp {
     IBreaking: INews | null
@@ -20,7 +21,7 @@ const Breaking:React.FC<BreakingProp> = ({IBreaking}): JSX.Element => {
                         <b><p>{IBreaking.title.slice(IBreaking.title.indexOf('-'))}</p></b>
                     </div>
                 </a>
-            ): null }
+            ): <ContentLoader/> }
         </div>
     )
 }
