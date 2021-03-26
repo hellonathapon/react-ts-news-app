@@ -4,10 +4,6 @@ import Layout from '../components/Layout';
 import { Breaking, Trending, News } from '../components/home'
 import { INews } from '.././interfaces/interfaces';
 
-interface hover {
-    imgToUrl: string,
-    des: string
-}
 const Home = (): JSX.Element => {
 
     const url = process.env.REACT_APP_BASE_URL;    
