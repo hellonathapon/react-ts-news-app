@@ -11,7 +11,6 @@ function useFetch<T>(url: string): { response: T[] | null; error: Error | null }
             try {
                 const res = await fetch(url);
                 const data = await res.json();
-                // console.log(data)
                 setResponse(data.articles)
 
             }catch (err) {

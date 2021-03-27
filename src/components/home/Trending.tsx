@@ -7,9 +7,9 @@ interface TrendingNews {
 }
 
 const Trending: React.FC<TrendingNews> = ({TNews}): JSX.Element => {
-    console.log(TNews)
     return (
         <div className="home-grid-item home-grid-item-2 trending">
+
             { TNews ? TNews.slice(1, 5).map((n, i) => (
                 <div className="trending-card" key={i}>
                     <h3><a href={n.url} target="_blank">🔥 {n.title.slice(0, n.title.indexOf('-'))}</a></h3>
